@@ -27,5 +27,14 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.9.10"
   },
-  "type": "module"
+  "type": "module",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.{html,css,json,md}": [
+      "prettier --write"
+    ]
+  }
 }
