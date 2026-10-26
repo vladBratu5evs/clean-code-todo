@@ -26,11 +26,9 @@ const createNewTaskElement = function (taskString) {
   deleteButtonImg.src = './remove.svg';
   deleteButton.appendChild(deleteButtonImg);
 
-  listItem.appendChild(checkBox);
-  listItem.appendChild(label);
-  listItem.appendChild(editInput);
-  listItem.appendChild(editButton);
-  listItem.appendChild(deleteButton);
+  [checkBox, label, editInput, editButton, deleteButton].forEach((element) => {
+    listItem.appendChild(element);
+  });
   return listItem;
 };
 
@@ -44,7 +42,6 @@ const addTask = function () {
 
 const editTask = function () {
   const listItem = this.parentNode;
-
   const editInput = listItem.querySelector('input[type=text]');
   const label = listItem.querySelector('label');
   const editButton = listItem.querySelector('.edit');
